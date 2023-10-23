@@ -13,6 +13,19 @@ function writeOutZones(startTick, endTick, writer){
     pop();
 }
 
+function coolCursor(){
+    correctedMouseY = mouseY + diver.y - viewHeight / 2
+    strokeWeight(5)
+    stroke(0, 255, 255)
+    if(!mouseIsPressed){
+        noFill();
+    }else{
+        fill(0, 255, 255);
+    }
+    circle(mouseX, correctedMouseY, tick/2);
+    strokeWeight(1)
+    noStroke();
+}
 //deletes the typewriter instance
 function delType(writer){
     writer.del = true;

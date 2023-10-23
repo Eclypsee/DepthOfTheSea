@@ -28,6 +28,7 @@ let twilight;
 let midnight;
 let abyssal;
 let trenches;
+
 //disable scrolling for aesthetics
 window.addEventListener('wheel', function(e) {
     e.preventDefault();
@@ -114,6 +115,7 @@ function draw() {
     pop();
     
     // rect(0, gameHeight-5, width, 10); draws a rect at game height to debug
+    coolCursor();
 
 }
 
