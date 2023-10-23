@@ -114,6 +114,8 @@ class Bubble {
         this.size = size;
         this.opacity = random(50, 255);
         this.opacityChange = random(1, 3); // How fast the opacity changes
+        this.speedx = random(-.1, .1);
+        this.speedy = random(-.3, .3);
     }
 
     update() {
@@ -122,15 +124,21 @@ class Bubble {
             this.opacityChange *= -1;
         }
         this.opacity = constrain(this.opacity, 50, 255);
+        this.x+=this.speedx;
+        this.y+=this.speedy;
     }
 
     display() {
         noStroke();
         fill(255, this.opacity);
         ellipse(this.x, this.y, this.size);
-        if(this.y<viewHeight/2+this.size/2){
+        if(this.y<viewHeight/2+this.size/2 || this.y>gameHeight){
             this.y = random(viewHeight/2+this.size/2, gameHeight);
         }
+        if(this.x<0 || this.x>width){
+            this.x = random(width);
+        }
+        
     }
 }
 

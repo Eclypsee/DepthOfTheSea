@@ -40,7 +40,7 @@ function setup() {
     diver = new Diver(width / 2, height / 2);
     frameRate(60);
     for (let i = 0; i < 300; i++) {
-        bubbles.push(new Bubble(random(viewWidth), random(viewHeight/2, gameHeight), random(3, 12)));
+        bubbles.push(new Bubble(random(viewWidth), random(viewHeight/2, gameHeight), random(2, 9)));
     }
     sunlight = new Typewriter("SUNLIGHT ZONE(0-656ft)", 3, 40);
     twilight = new Typewriter("TWILIGHT ZONE(656-3,281ft)", 3, 40);
