@@ -27,7 +27,7 @@ let sunlight;
 let twilight;
 let midnight;
 let abyssal;
-let trenches;
+let trench;
 
 //disable scrolling for aesthetics
 window.addEventListener('wheel', function(e) {
