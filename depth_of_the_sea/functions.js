@@ -3,7 +3,7 @@
 function writeOutZones(startTick, endTick, writer){
     push();
         resetMatrix();
-        translate(width/2, 5*height/6);
+        translate(viewWidth/2, 5*viewHeight/6);
         writer.display();
         if(!(diverDepthInTicks >=startTick && diverDepthInTicks<=endTick)){
             delType(writer);
@@ -16,11 +16,11 @@ function writeOutZones(startTick, endTick, writer){
 function coolCursor(){
     correctedMouseY = mouseY + diver.y - viewHeight / 2
     strokeWeight(5)
-    stroke(0, 255, 255)
+    stroke(255, 255, 255)
     if(!mouseIsPressed){
         noFill();
     }else{
-        fill(0, 255, 255);
+        fill(255, 255, 255);
     }
     circle(mouseX, correctedMouseY, tick/2);
     strokeWeight(1)
@@ -44,7 +44,7 @@ function gradient(c1, c2, s, e){ //gradient
        let inter = map(i, s, e, 0, 1);
        let c = lerpColor(c1, c2, inter);
        stroke(c);
-       line(0, i, width, i);
+       line(0, i, viewWidth, i);
    }
 }
 

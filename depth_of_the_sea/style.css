@@ -4,10 +4,12 @@ html, body {
     overflow-x:hidden;
     background:black;
 }
-canvas {
-    display: block;
-}
 /* removes the cursor */
 .noPointer { 
     cursor: none; 
+}
+#game{
+    display: block;
+    width: 100vw;
+    height: 100vh;
 }

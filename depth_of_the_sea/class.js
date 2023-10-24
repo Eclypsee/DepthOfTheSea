@@ -4,7 +4,7 @@ class Diver {
         this.x = x;
         this.y = y;
         this.bubbles = [];
-        this.unit = height/18;
+        this.unit = viewHeight/18;
     }
 
     display() {
@@ -30,7 +30,8 @@ class Diver {
     }
 
     move() {
-        if (diverSpeedY !== 0 || diverSpeedX !== 0) {
+        
+        if (this.y>10+viewHeight/2) {
             this.addBubble();
         }
         // Vertical movement with acceleration
@@ -94,7 +95,7 @@ class Diver {
             ellipse(bubble.x, bubble.y, bubble.radius);
 
             // Update bubble position and opacity
-            bubble.y -= 1; // Adjust the speed of the bubbles rising
+            bubble.y -= 2; // Adjust the speed of the bubbles rising
             bubble.opacity -= 2; // Adjust how quickly the bubbles fade
 
             // Remove the bubble from the array if it is fully transparent
@@ -135,8 +136,8 @@ class Bubble {
         if(this.y<viewHeight/2+this.size/2 || this.y>gameHeight){
             this.y = random(viewHeight/2+this.size/2, gameHeight);
         }
-        if(this.x<0 || this.x>width){
-            this.x = random(width);
+        if(this.x<0 || this.x>viewWidth){
+            this.x = random(viewWidth);
         }
         
     }
