@@ -3,6 +3,10 @@
 //add images of reaper leviathan
 //add parallax background
 //light rays
+
+//*deltaTime/17
+
+
 let c;//canvas
 
 //const divelement = document.getElementById("game");
@@ -44,7 +48,7 @@ function setup() {
     c = createCanvas(viewWidth, viewHeight);
     c.parent('game');
     diver = new Diver(viewWidth / 2, viewHeight / 2);
-    frameRate(60);
+    frameRate(60);//constant framerate to make things easier
     for (let i = 0; i < 500; i++) {
         bubbles.push(new Bubble(random(viewWidth), random(viewHeight/2, gameHeight), random(2, 9)));
     }

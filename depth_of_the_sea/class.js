@@ -1,4 +1,5 @@
 //class file
+//multiply speed*deltaTime/17
 class Diver {
     constructor(x, y) {
         this.x = x;
@@ -95,8 +96,8 @@ class Diver {
             ellipse(bubble.x, bubble.y, bubble.radius);
 
             // Update bubble position and opacity
-            bubble.y -= 2; // Adjust the speed of the bubbles rising
-            bubble.opacity -= 2; // Adjust how quickly the bubbles fade
+            bubble.y -= 2*deltaTime/17; // Adjust the speed of the bubbles rising
+            bubble.opacity -= 2*deltaTime/17; // Adjust how quickly the bubbles fade
 
             // Remove the bubble from the array if it is fully transparent
             if (bubble.opacity <= 0 || bubble.y<viewHeight/2) {
@@ -120,13 +121,13 @@ class Bubble {
     }
 
     update() {
-        this.opacity += this.opacityChange;
+        this.opacity += this.opacityChange*deltaTime/17;
         if (this.opacity > 255 || this.opacity < 50) {
             this.opacityChange *= -1;
         }
         this.opacity = constrain(this.opacity, 50, 255);
-        this.x+=this.speedx;
-        this.y+=this.speedy;
+        this.x+=this.speedx*deltaTime/17;
+        this.y+=this.speedy*deltaTime/17;
     }
 
     display() {
